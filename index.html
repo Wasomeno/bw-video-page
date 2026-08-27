@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black & White Video</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .stage {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Convert the video to black and white */
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <video
+      src="animated-background.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
+  </div>
+</body>
+</html>
