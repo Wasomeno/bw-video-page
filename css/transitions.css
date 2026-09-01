@@ -1,0 +1,352 @@
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition {
+  background: #050507;
+}
+
+.nav {
+  view-transition-name: site-nav;
+}
+
+::view-transition-group(site-nav) {
+  animation-duration: 780ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 32;
+}
+
+::view-transition-old(site-nav),
+::view-transition-new(site-nav) {
+  animation: none;
+  mix-blend-mode: normal;
+  height: 100%;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 780ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation-name: xstation-field-recede;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  animation-name: xstation-aperture-open;
+}
+
+::view-transition-group(project-hero) {
+  animation-duration: 920ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 24;
+  overflow: clip;
+}
+
+::view-transition-old(project-hero),
+::view-transition-new(project-hero) {
+  animation-duration: 920ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
+  height: 100%;
+  overflow: clip;
+  object-fit: cover;
+}
+
+::view-transition-old(project-hero) {
+  animation-name: xstation-hero-dissolve;
+}
+
+::view-transition-new(project-hero) {
+  animation-name: xstation-hero-lock;
+}
+
+:root:active-view-transition-type(back)::view-transition-old(root) {
+  animation-name: xstation-aperture-close;
+  animation-duration: 640ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root:active-view-transition-type(back)::view-transition-new(root) {
+  animation-name: xstation-field-settle;
+  animation-duration: 740ms;
+}
+
+:root:active-view-transition-type(back)::view-transition-group(project-hero) {
+  animation-duration: 740ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root:active-view-transition-type(back)::view-transition-old(project-hero),
+:root:active-view-transition-type(back)::view-transition-new(project-hero) {
+  animation-duration: 740ms;
+}
+
+:root:active-view-transition-type(cross)::view-transition-group(project-hero) {
+  animation: none;
+}
+
+:root:active-view-transition-type(cross)::view-transition-old(project-hero),
+:root:active-view-transition-type(cross)::view-transition-new(project-hero) {
+  animation: none;
+}
+
+:root:active-view-transition-type(cross)::view-transition-old(root) {
+  animation-name: xstation-cross-out;
+  animation-duration: 420ms;
+}
+
+:root:active-view-transition-type(cross)::view-transition-new(root) {
+  animation-name: xstation-cross-in;
+  animation-duration: 560ms;
+}
+
+.launch.is-transitioning .launch-stage,
+.project.is-transitioning .project-frame,
+html[data-return-project="helios"] .launch[data-project="helios"] .launch-stage,
+html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-stage,
+html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-stage,
+html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-stage,
+html[data-return-project="veil"] .launch[data-project="veil"] .launch-stage,
+html[data-return-project="loom"] .launch[data-project="loom"] .launch-stage,
+body[data-page="project"]:not(.is-hero-suppressed) .detail-hero {
+  view-transition-name: project-hero;
+  contain: none;
+}
+
+.launch.is-transitioning .launch-stage,
+.project.is-transitioning .project-frame,
+html[data-return-project="helios"] .launch[data-project="helios"] .launch-stage,
+html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-stage,
+html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-stage,
+html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-stage,
+html[data-return-project="veil"] .launch[data-project="veil"] .launch-stage,
+html[data-return-project="loom"] .launch[data-project="loom"] .launch-stage {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  clip-path: none !important;
+}
+
+.launch.is-transitioning .launch-video,
+html[data-return-project="helios"] .launch[data-project="helios"] .launch-video,
+html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-video,
+html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-video,
+html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-video,
+html[data-return-project="veil"] .launch[data-project="veil"] .launch-video,
+html[data-return-project="loom"] .launch[data-project="loom"] .launch-video {
+  animation: none !important;
+  transform: none !important;
+  filter: grayscale(0) contrast(1.02) brightness(0.98) !important;
+}
+
+.launch.is-transitioning .launch-shift,
+html[data-return-project="helios"] .launch[data-project="helios"] .launch-shift,
+html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-shift,
+html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-shift,
+html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-shift,
+html[data-return-project="veil"] .launch[data-project="veil"] .launch-shift,
+html[data-return-project="loom"] .launch[data-project="loom"] .launch-shift {
+  transform: none !important;
+}
+
+.launch.is-transitioning .launch-stage::after,
+html[data-return-project="helios"] .launch[data-project="helios"] .launch-stage::after,
+html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-stage::after,
+html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-stage::after,
+html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-stage::after,
+html[data-return-project="veil"] .launch[data-project="veil"] .launch-stage::after,
+html[data-return-project="loom"] .launch[data-project="loom"] .launch-stage::after {
+  opacity: 0 !important;
+}
+
+.project.is-transitioning img,
+html[data-return-project="helios"] .project[data-project="helios"] img,
+html[data-return-project="meridian"] .project[data-project="meridian"] img,
+html[data-return-project="lattice"] .project[data-project="lattice"] img,
+html[data-return-project="northstar"] .project[data-project="northstar"] img,
+html[data-return-project="veil"] .project[data-project="veil"] img,
+html[data-return-project="loom"] .project[data-project="loom"] img {
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+.project.is-transitioning .project-ascii,
+.project.is-transitioning .still-ascii,
+.project.is-transitioning .still-mesh,
+.project.is-transitioning .still-hud,
+.project.is-transitioning .still-scan,
+html[data-return-project="helios"] .project[data-project="helios"] .project-ascii,
+html[data-return-project="meridian"] .project[data-project="meridian"] .project-ascii,
+html[data-return-project="lattice"] .project[data-project="lattice"] .project-ascii,
+html[data-return-project="northstar"] .project[data-project="northstar"] .project-ascii,
+html[data-return-project="veil"] .project[data-project="veil"] .project-ascii,
+html[data-return-project="loom"] .project[data-project="loom"] .project-ascii {
+  opacity: 0 !important;
+  transition: none !important;
+}
+
+@keyframes xstation-field-recede {
+  from {
+    opacity: 1;
+    filter: blur(0) brightness(1) saturate(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    filter: blur(12px) brightness(0.42) saturate(0.7);
+    transform: scale(1.045);
+  }
+}
+
+@keyframes xstation-aperture-open {
+  from {
+    opacity: 0;
+    filter: brightness(1.55) saturate(0.35) contrast(1.18);
+    clip-path: inset(48% 0 48% 0);
+    transform: scale(1.03);
+  }
+  28% {
+    opacity: 1;
+    filter: brightness(1.22) saturate(0.72) contrast(1.08);
+    clip-path: inset(18% 0 18% 0);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1) saturate(1) contrast(1);
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes xstation-aperture-close {
+  from {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    filter: brightness(1.35) saturate(0.4);
+    clip-path: inset(46% 0 46% 0);
+    transform: scale(0.985);
+  }
+}
+
+@keyframes xstation-field-settle {
+  from {
+    opacity: 0;
+    filter: blur(10px) brightness(0.55);
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes xstation-hero-dissolve {
+  from {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+  }
+  to {
+    opacity: 0;
+    filter: brightness(1.28) saturate(0.62);
+  }
+}
+
+@keyframes xstation-hero-lock {
+  from {
+    opacity: 0.35;
+    filter: brightness(1.42) saturate(0.45) contrast(1.12);
+  }
+  42% {
+    opacity: 1;
+    filter: brightness(1.12) saturate(0.88) contrast(1.04);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1) saturate(1) contrast(1);
+  }
+}
+
+@keyframes xstation-cross-out {
+  to {
+    opacity: 0;
+    filter: blur(8px) brightness(1.2);
+  }
+}
+
+@keyframes xstation-cross-in {
+  from {
+    opacity: 0;
+    filter: blur(8px) brightness(1.25) saturate(0.6);
+    clip-path: inset(0 42% 0 42%);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launch.is-transitioning .launch-stage,
+  .project.is-transitioning .project-frame,
+  html[data-return-project="helios"] .launch[data-project="helios"] .launch-stage,
+  html[data-return-project="meridian"] .launch[data-project="meridian"] .launch-stage,
+  html[data-return-project="lattice"] .launch[data-project="lattice"] .launch-stage,
+  html[data-return-project="northstar"] .launch[data-project="northstar"] .launch-stage,
+  html[data-return-project="veil"] .launch[data-project="veil"] .launch-stage,
+  html[data-return-project="loom"] .launch[data-project="loom"] .launch-stage,
+  body[data-page="project"] .detail-hero,
+  .nav {
+    view-transition-name: none;
+  }
+
+  ::view-transition-group(project-hero),
+  ::view-transition-old(project-hero),
+  ::view-transition-new(project-hero) {
+    animation: none !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    filter: none;
+    clip-path: none;
+    transform: none;
+  }
+
+  ::view-transition-old(root) {
+    animation-name: xstation-vt-fade-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: xstation-vt-fade-in;
+  }
+}
+
+@keyframes xstation-vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes xstation-vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}

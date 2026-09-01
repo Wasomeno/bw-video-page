@@ -1,12 +1,17 @@
-# Black & White Video Page
+# Xstation — Landing
 
-A minimal HTML page that plays `animated-background.mp4` in black and white using CSS `filter: grayscale(100%)`.
+Home page (`index.html`) with a full-bleed black & white video field and cursor color reveal.
+
+Project archive cards open a detail page for each product. Same-origin navigation morphs the card image into the case-study hero (View Transitions, with a FLIP fallback).
 
 ## Run locally
 
 ```bash
-# from this folder
-python3 -m http.server 8080
+npm start
 ```
 
 Then open [http://localhost:8080](http://localhost:8080).
+
+## Live site
+
+[https://wasomeno.github.io/bw-video-page/](https://wasomeno.github.io/bw-video-page/)

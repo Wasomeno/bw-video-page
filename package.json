@@ -1,0 +1,7 @@
+{
+  "name": "bw-video-page",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8080"
+  }
+}

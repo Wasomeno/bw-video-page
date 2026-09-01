@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helios — Xstation</title>
+  <script>
+    (function () {
+      try {
+        const prefix = "xs-hop=";
+        const parts = document.cookie.split("; ");
+        for (let i = 0; i < parts.length; i += 1) {
+          if (parts[i].indexOf(prefix) === 0) {
+            const kind = decodeURIComponent(parts[i].slice(prefix.length)).split(".")[0];
+            if (kind) document.documentElement.setAttribute("data-hop", kind);
+            break;
+          }
+        }
+      } catch (err) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@500,600,700&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <script src="../js/page-transition.js"></script>
+  <script src="../js/chrome.js" defer></script>
+</head>
+<body data-page="project" data-project="helios">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="../index.html" aria-label="Home">
+      <img class="nav-logo" src="../logo.svg" alt="Xstation" width="120" height="30" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#work" class="is-active" aria-current="page">Projects</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="nav-end">
+      <div class="nav-status" aria-hidden="true">
+        <span class="nav-status-dot"></span>
+        <span>Field live</span>
+      </div>
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path class="nav-toggle-line nav-toggle-line--top" d="M2.5 5h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path class="nav-toggle-line nav-toggle-line--bottom" d="M2.5 11h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <nav aria-label="Mobile">
+      <a href="../index.html">Home <span>01</span></a>
+      <a href="../index.html#work" class="is-active" aria-current="page">Projects <span>02</span></a>
+      <a href="../about.html">About <span>03</span></a>
+    </nav>
+  </div>
+
+  <main class="detail-main" id="main-content" tabindex="-1">
+    <article class="detail detail-enter">
+      <a class="detail-back" data-project-back href="../index.html?project=helios">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10.5 3.5 6 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Archive
+      </a>
+
+      <figure class="detail-hero">
+        <img
+          src="../media/projects/helios.jpg"
+          alt="Helios — operations console"
+          width="1600"
+          height="1000"
+        />
+      </figure>
+
+      <header class="detail-title">
+        <p class="detail-kicker">
+          <span>01</span>
+          <span>Operations</span>
+        </p>
+        <h1>Helios</h1>
+        <p class="detail-lead">A quiet operations console. Exceptions surface as a single line of truth, then recede. Operators stay with the work, not the tooling.</p>
+      </header>
+
+      <dl class="detail-hud">
+        <div>
+          <dt>Cycle</dt>
+          <dd>2025–26</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Field live</dd>
+        </div>
+        <div>
+          <dt>Domain</dt>
+          <dd>Live operations</dd>
+        </div>
+      </dl>
+
+      <section class="detail-signals" aria-label="Field signals">
+        <div class="detail-signal"><b>12ms</b><span>P95 route</span></div>
+        <div class="detail-signal"><b>04</b><span>Regions</span></div>
+        <div class="detail-signal"><b>99.98%</b><span>Quiet hours</span></div>
+      </section>
+
+      <section class="detail-story" aria-label="Case notes">
+        <div>
+          <h2>Problem</h2>
+          <p>Incident boards were louder than the systems they watched. Status lived in five surfaces, and the first ten minutes of every event were spent reconstructing what was already known.</p>
+        </div>
+        <div>
+          <h2>Approach</h2>
+          <p>Helios collapses telemetry, runbooks, and ownership into one field. Intelligence ranks what matters, then hides. The console only raises its voice when a human decision is actually required.</p>
+        </div>
+        <div>
+          <h2>Outcome</h2>
+          <p>On-call reads one surface. Handoffs no longer rewrite the night. The product feels absent until it is needed, which is the point.</p>
+        </div>
+      </section>
+
+      <nav class="detail-pager" aria-label="Adjacent projects">
+        <a href="loom.html">
+          <span>Previous</span>
+          <strong>Loom</strong>
+        </a>
+        <a href="meridian.html">
+          <span>Next</span>
+          <strong>Meridian</strong>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <section class="engage" id="engage" aria-labelledby="engage-title">
+    <div class="engage-grid">
+      <div class="engage-copy">
+        <p class="engage-kicker">
+          <span>Open channel</span>
+          <span>07</span>
+        </p>
+        <h2 class="engage-title" id="engage-title">Ready to work in the field?</h2>
+        <p class="engage-lead">
+          If a quieter system would change how your team operates, we are available for a first conversation.
+        </p>
+      </div>
+
+      <div class="engage-panel">
+        <div class="engage-actions">
+          <a class="engage-action" href="mailto:hello@xstation.studio?subject=New%20field">
+            Start a briefing
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="engage-action" href="mailto:hello@xstation.studio?subject=Field%20session">
+            Book a 30-minute session
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="engage-meta">
+          <div>
+            <h3>Channel</h3>
+            <div class="engage-channels">
+              <a href="mailto:hello@xstation.studio">hello@xstation.studio</a>
+              <p>Replies within two field days.</p>
+            </div>
+          </div>
+          <div>
+            <h3>Elsewhere</h3>
+            <div class="engage-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+              <a href="https://dribbble.com/" target="_blank" rel="noreferrer noopener">Dribbble</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
+              <a href="https://x.com/" target="_blank" rel="noreferrer noopener">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer-top">
+      <a class="site-footer-brand" href="../index.html" aria-label="Xstation home">
+        <img src="../logo.svg" alt="" width="120" height="30" />
+      </a>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#work">Projects</a>
+        <a href="#engage">Work with us</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <p class="site-footer-copy">
+      Calm systems for intelligent products.
+    </p>
+    <div class="site-footer-base">
+      <span>Xstation, 2026</span>
+      <a class="site-footer-back" data-project-back href="../index.html?project=helios">Back to archive</a>
+    </div>
+  </footer>
+</body>
+</html>

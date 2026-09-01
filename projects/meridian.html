@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian — Xstation</title>
+  <script>
+    (function () {
+      try {
+        const prefix = "xs-hop=";
+        const parts = document.cookie.split("; ");
+        for (let i = 0; i < parts.length; i += 1) {
+          if (parts[i].indexOf(prefix) === 0) {
+            const kind = decodeURIComponent(parts[i].slice(prefix.length)).split(".")[0];
+            if (kind) document.documentElement.setAttribute("data-hop", kind);
+            break;
+          }
+        }
+      } catch (err) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@500,600,700&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/transitions.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+  <script src="../js/page-transition.js"></script>
+  <script src="../js/chrome.js" defer></script>
+</head>
+<body data-page="project" data-project="meridian">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="../index.html" aria-label="Home">
+      <img class="nav-logo" src="../logo.svg" alt="Xstation" width="120" height="30" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#work" class="is-active" aria-current="page">Projects</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="nav-end">
+      <div class="nav-status" aria-hidden="true">
+        <span class="nav-status-dot"></span>
+        <span>Field live</span>
+      </div>
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+      >
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path class="nav-toggle-line nav-toggle-line--top" d="M2.5 5h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path class="nav-toggle-line nav-toggle-line--bottom" d="M2.5 11h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <nav aria-label="Mobile">
+      <a href="../index.html">Home <span>01</span></a>
+      <a href="../index.html#work" class="is-active" aria-current="page">Projects <span>02</span></a>
+      <a href="../about.html">About <span>03</span></a>
+    </nav>
+  </div>
+
+  <main class="detail-main" id="main-content" tabindex="-1">
+    <article class="detail detail-enter">
+      <a class="detail-back" data-project-back href="../index.html?project=meridian">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10.5 3.5 6 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Archive
+      </a>
+
+      <figure class="detail-hero">
+        <img
+          src="../media/projects/meridian.jpg"
+          alt="Meridian — knowledge surface"
+          width="1600"
+          height="1000"
+        />
+      </figure>
+
+      <header class="detail-title">
+        <p class="detail-kicker">
+          <span>02</span>
+          <span>Knowledge</span>
+        </p>
+        <h1>Meridian</h1>
+        <p class="detail-lead">A knowledge surface that retrieves without forcing a search ritual. Teams ask in the language of the work and receive the page, not a list.</p>
+      </header>
+
+      <dl class="detail-hud">
+        <div>
+          <dt>Cycle</dt>
+          <dd>2025–26</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Field live</dd>
+        </div>
+        <div>
+          <dt>Domain</dt>
+          <dd>Knowledge systems</dd>
+        </div>
+      </dl>
+
+      <section class="detail-signals" aria-label="Field signals">
+        <div class="detail-signal"><b>0.8s</b><span>First hit</span></div>
+        <div class="detail-signal"><b>100%</b><span>Cited</span></div>
+        <div class="detail-signal"><b>0.4%</b><span>Orphans</span></div>
+      </section>
+
+      <section class="detail-story" aria-label="Case notes">
+        <div>
+          <h2>Problem</h2>
+          <p>Institutional knowledge was filed, tagged, and then lost to the query box. The right document existed. The path to it did not.</p>
+        </div>
+        <div>
+          <h2>Approach</h2>
+          <p>Meridian treats every artifact as a coordinate. Retrieval is a movement toward the source, with citations kept in the margin so trust never depends on a black box.</p>
+        </div>
+        <div>
+          <h2>Outcome</h2>
+          <p>Answers arrive with their origin. New operators inherit the field instead of a folder tree. Search becomes a last resort.</p>
+        </div>
+      </section>
+
+      <nav class="detail-pager" aria-label="Adjacent projects">
+        <a href="helios.html">
+          <span>Previous</span>
+          <strong>Helios</strong>
+        </a>
+        <a href="lattice.html">
+          <span>Next</span>
+          <strong>Lattice</strong>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <section class="engage" id="engage" aria-labelledby="engage-title">
+    <div class="engage-grid">
+      <div class="engage-copy">
+        <p class="engage-kicker">
+          <span>Open channel</span>
+          <span>07</span>
+        </p>
+        <h2 class="engage-title" id="engage-title">Ready to work in the field?</h2>
+        <p class="engage-lead">
+          If a quieter system would change how your team operates, we are available for a first conversation.
+        </p>
+      </div>
+
+      <div class="engage-panel">
+        <div class="engage-actions">
+          <a class="engage-action" href="mailto:hello@xstation.studio?subject=New%20field">
+            Start a briefing
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="engage-action" href="mailto:hello@xstation.studio?subject=Field%20session">
+            Book a 30-minute session
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="engage-meta">
+          <div>
+            <h3>Channel</h3>
+            <div class="engage-channels">
+              <a href="mailto:hello@xstation.studio">hello@xstation.studio</a>
+              <p>Replies within two field days.</p>
+            </div>
+          </div>
+          <div>
+            <h3>Elsewhere</h3>
+            <div class="engage-social">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+              <a href="https://dribbble.com/" target="_blank" rel="noreferrer noopener">Dribbble</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
+              <a href="https://x.com/" target="_blank" rel="noreferrer noopener">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer-top">
+      <a class="site-footer-brand" href="../index.html" aria-label="Xstation home">
+        <img src="../logo.svg" alt="" width="120" height="30" />
+      </a>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#work">Projects</a>
+        <a href="#engage">Work with us</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <p class="site-footer-copy">
+      Calm systems for intelligent products.
+    </p>
+    <div class="site-footer-base">
+      <span>Xstation, 2026</span>
+      <a class="site-footer-back" data-project-back href="../index.html?project=meridian">Back to archive</a>
+    </div>
+  </footer>
+</body>
+</html>
